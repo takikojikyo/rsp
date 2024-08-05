@@ -1,0 +1,872 @@
+body{
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #333;
+}
+html{
+  font-size: 100%;
+}
+img{
+  width: 100%;
+  max-width: 100%;
+  vertical-align: bottom;
+}
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+  color: #333;
+  transition: all 0.5s;
+}
+a:hover{
+  opacity:  0.7;
+}
+
+/*共通*/
+.btn{
+  display: inline-block;
+  font-size: 24px;
+  position: relative;
+  text-align: center;
+  padding: 15px 0;
+  width: 450px;
+  color: white;
+  border-radius: 50px;
+  background: linear-gradient(#FFBA58,#E3D924);
+}
+.front-btn{
+  width: 300px;
+}
+.btn::after{
+  content: "＞";
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+}
+.btn-box{
+  text-align: center;
+}
+.container{
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 4%;
+}
+.section-titlebox{
+  margin-bottom: 40px;
+}
+.section-titlebox p{
+  position: relative;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+.section-titlebox p::before{
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: #EDA642;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: -15px;
+  transform: translateY(-50%);
+}
+.section-titlebox h2{
+  margin-left: 20px;
+  font-size: 32px;
+}
+.blue{
+
+  background: linear-gradient(#199FF0,#CEECFE);
+  z-index: -1;
+  position: absolute;
+}
+
+
+/*header*/
+header{
+  padding: 0 3%;
+  background: rgba(257,257,257,0.9);
+  position: relative;
+}
+.h-container{
+  padding: 15px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+.h-nav ul{
+  display: flex;
+}
+.h-nav li{
+  margin-left: 20px;
+}
+.h-nav a{
+  position: relative;
+}
+.h-nav-a:after {
+  background-color: #FFBA58; /* 下線の色 */
+  bottom: -8px; /* 要素の下端からの距離 */
+  content: ""; /* 要素に内容を追加 */
+  height: 2px; /* 下線の高さ */
+  left: 0; /* 要素の左端からの距離 */
+  opacity: 0; /* 不透明度 */
+  position: absolute; /* 絶対位置指定 */
+  transition: all .3s; /* アニメーション効果を追加 */
+  width: 100%; /* 要素の幅 */
+}
+/* リンクにホバーした際の下線の表示 */
+.h-nav-a:hover::after {
+  bottom: -4px; /* 下線を上から下に移動 */
+  opacity: 1; /* 不透明度を変更してフェードイン */
+}
+.h-contactbtn{
+  padding: 8px 20px;
+  background: linear-gradient(#FFBA58,#E3D924);
+  border-radius: 30px;
+}
+h1{
+  line-height: 1;
+  font-size: 36px;
+}
+h1 a{
+  display: block;
+}
+
+.toggle_btn{
+  display: none;
+  width: 32px;
+  height: 32px;
+  position: fixed;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.toggle_btn span{
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #333333;
+  transition: all 0.5s;
+  position: absolute;
+}
+.toggle_btn span:nth-child(1) {
+  top: 25%;
+}
+
+.toggle_btn span:nth-child(2) {
+  top: 50%;
+}
+.toggle_btn span:nth-child(3) {
+  top: 75%;
+}
+
+.open .toggle_btn span:nth-child(1) {
+  top: 50%;
+  transform: rotate(-45deg);
+}
+.open .toggle_btn span:nth-child(2) {
+  transform: rotate(-45deg);
+}
+
+.open .toggle_btn span:nth-child(3) {
+  top: 50%;
+  transform:  rotate(45deg);
+}
+.mask{
+  display:none;
+}
+
+/*front-mainvisual*/
+.front-mainvisual{
+  position: relative;
+  margin-bottom: 120px;
+}
+.slick-box img{
+  height: 90vh;
+  object-fit: cover;
+}
+.slick-1{
+  object-position: 40% 50%;
+}
+.slick-2{
+  object-position: 80% 50%;
+}
+.slick-tex{
+  position: absolute;
+  bottom: 30px;
+  left: 3%;
+  color: white
+}
+.slick-tex-tag1{
+  background: #1da1f1;
+  display: inline-block;
+  padding: 15px 20px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+  position: relative;
+}
+.slick-tex-tag1::after{
+  content: "";
+  width: 0;
+height: 0;
+border-style: solid;
+border-color: #1da1f1 transparent transparent transparent;
+border-width: 17.32px 10px 0px 10px;
+position: absolute;
+bottom: -10px;
+left: 10%;
+}
+
+.slick-tex-tag2{
+  font-size: 24px;
+  text-shadow: 3px 2px 3px rgba(0,0,0,0.8);
+}
+.slick-tex h2{
+  font-size: 48px;
+  text-shadow: 3px 2px 3px rgba(0,0,0,0.8);
+}
+.slick-img{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 30px;
+  background: #fff;
+  border-radius: 30px 0 0 0 ;
+}
+.slick-img img{
+  width: 250px;
+  transform: rotate(-20deg);
+}
+
+
+/*front-message*/
+.front-message{
+  margin-bottom: 120px;
+}
+.front-message h3{
+  text-align: center;
+  margin-bottom: 50px;
+}
+.message-slide{
+  margin-bottom: 80px;
+}
+.message-slide li{
+  padding: 0 10px;
+}
+.message-slide img{
+  height: 350px;
+  object-fit: cover;
+  border-radius: 50px;
+}
+.m-slide-2{
+  margin-top: 50px;
+}
+
+
+
+/*front-business*/
+.front-business{
+  margin-bottom: 130px;
+}
+.fb-box{
+  display: flex;
+  justify-content: space-between;
+}
+.fb-box li{
+  width: 48%;
+}
+.fb-tex{
+  margin-bottom: 50px;
+}
+.fb-tex p:not(:last-of-type){
+  margin-bottom: 20px;
+}
+.fb-right{
+  position: relative;
+  text-align: right;
+}
+.fb-right img{
+ border-radius: 50px;
+}
+.fb-img1{
+width: 90%;
+height: 350px;
+object-fit: cover;
+}
+.fb-img2{
+  width: 250px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+}
+
+/*front-conpany*/
+.front-company{
+  padding-bottom: 120px;
+  position: relative;
+}
+.front-company .section-titlebox p::before{
+  background: #333333;
+}
+.blue1{
+  width: 100%;
+  height: 360px;
+  top: -50px;
+  left: 0;
+  border-radius: 80px 0 0 0 ;
+}
+.btn-box2{
+  text-align: right;
+}
+
+/*front-contact*/
+.front-contact{
+  background-image: url(../img/26436582_m1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  padding: 80px 0;
+  
+}
+.contact-tex{
+  color: white;
+  width: 50%;
+  margin-bottom: 50px;
+}
+.contact-tex h3{
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.btn-box2{
+  text-align: left;
+}
+
+/*footer*/
+footer{
+  background: linear-gradient(#199FF0,#CEECFE);
+  padding: 50px 0;
+}
+.f-box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.f-nav ul{
+display: flex;
+align-items: center;
+}
+.f-nav ul li{
+margin-left: 30px;
+}
+.copy-right{
+  text-align: center;
+  font-size: 12px;
+}
+
+
+/*下層ページ*/
+.blue2{
+  width: 50%;
+  height: 330px;
+  top: -80px;
+  left: 0;
+  border-radius:  0 0 120px 0;
+}
+/*事業内容*/
+/*business*/
+.business{
+  position: relative;
+  padding: 80px 0;
+}
+.business-heading{
+  margin-bottom: 80px;
+}
+.business-item{
+  display: flex;
+  align-items: center;
+}
+.business-item li{
+  width: 50%;
+}
+.business-de-tax {
+width: 90%;
+margin: 0 auto;
+}
+.b-title{
+  margin-bottom: 20px;
+  position: relative;
+}
+.b-title::after{
+  content: "";
+  width: 60px;
+  height: 2px;
+  background: #EDA642;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+.business-item img{
+  height: 300px;
+  object-fit: cover;
+}
+
+/*power-business*/
+.introduce{
+  margin-bottom: 120px;
+}
+.power-business{
+  margin-bottom: 50px;
+}
+.power-business .power-inner{
+  background: #CEECFE;
+  padding: 80px 3%;
+}
+
+.power-title{
+  font-size: 32px;
+  margin-left: 30px;
+  position: relative;
+  margin-bottom: 50px;
+}
+.power-title::before{
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: #EDA642;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: -20px;
+  transform: translateY(-50%);
+}
+
+.bi-title{
+  font-size: 24px;
+  margin-bottom: 50px;
+  position: relative;
+}
+.bi-title::after{
+  content: "";
+  width: 100px;
+  height: 4px;
+  background: #EDA642;
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+}
+.introduce-img{
+  text-align: center;
+  margin-bottom: 50px;
+}
+.introduce-img img{
+width: 80%;
+}
+.introduce-tex{
+  margin-bottom: 50px;
+}
+.introduce-tex .i1{
+  font-size: 18px;
+  font-weight: bold;
+}
+.introduce-tex p:not(:last-of-type){
+  margin-bottom: 20px;
+}
+.introduce-img2{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.introduce-img2 img{
+  height: 300px;
+  object-fit: cover;
+}
+/*goods1*/
+.goods1{
+  margin-bottom: 120px;
+}
+.goods-tex{
+  margin-bottom: 50px;
+}
+.goods-tex p:not(:last-of-type){
+margin-bottom: 20px;
+}
+.goods1 .introduce-img{
+  background: #fff;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+/*goods2*/
+.goods-list{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+}
+.goods-list li{
+background: #fff;
+padding: 20px;
+border-radius: 30px;
+}
+.goods-listimg{
+  text-align: center;
+}
+.goods-listimg img{
+  width: 80%;
+}
+
+
+/*会社概要*/
+.company{
+  position: relative;
+  padding: 80px 0;
+}
+.company-detail{
+  margin-top: 80px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.company-detail dt{
+  width: 25%;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 20px;
+  border-bottom: 1px solid #ccc;
+}
+.company-detail dd{
+  width: 75%;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  font-size: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+/*コンタクト*/
+.contact{
+  position: relative;
+  padding: 80px 0;
+}
+.contact-p{
+  margin-bottom: 80px;
+} 
+.contact-form {
+  margin-bottom: 50px;
+}
+.contact-form dt {
+  margin-bottom: 5px;
+}
+
+.contact-form dd {
+  margin-bottom: 15px;
+}
+
+.contact-form dd input,
+.contact-form dd textarea {
+  width: 100%;
+  border: solid 1px #ccc;
+  padding: 10px;
+}
+
+.contact-form dd textarea {
+  height: 10rem;
+}
+
+.submit-btn {
+  text-align: center;
+}
+
+.submit-btn input {
+  background: linear-gradient(#FFBA58,#E3D924);
+  width: 300px;
+  color: #fff;
+  padding: 15px 0;
+  font-size: 24px;
+  border-radius: 30px;
+}
+
+@media (max-width:980px){
+  .slick-tex h2 {
+    font-size: 36px;
+  }
+  .slick-img{
+    padding: 20px;
+  }
+  .slick-img img{
+    width: 200px;
+  }
+}
+
+@media (max-width:768px){
+  /*共通*/
+  .btn{
+    font-size: 20px;
+    width: 80%;
+  }
+  .front-btn{
+    width: 300px;
+  }
+
+  .section-titlebox h2{
+    margin-left: 20px;
+    font-size: 28px;
+  }
+  /*header*/
+  h1{
+    line-height: 1;
+    font-size: 32px;
+  }
+  .toggle_btn{
+    display: block;
+    position: fixed;
+    top: 10px;
+    right: 4%;
+    z-index: 100;
+  }
+  .h-nav{
+    height: 80vh;
+    width: 50%;
+    background:#fff;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s;
+    z-index: 99;
+  }
+  .open .h-nav{
+    visibility: visible;
+    opacity: 1;
+    top: 50%;
+    right: 25%;
+    transform: translateY(-50%) ;
+  }
+  .h-nav ul{
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  }
+  .h-nav li{
+    margin-left: 0px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  .h-nav li:last-of-type{
+    margin-bottom: 0;
+  }
+  .open .mask{
+    display:block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: #1da1f1;
+    opacity: 0.8;
+z-index: 90;
+  }
+  
+  /*main-visual*/
+  .front-mainvisual{
+    margin-bottom: 80px;
+  }
+  .slick-tex{
+    position: absolute;
+    top: 65vh;
+    left: 3%;
+    color: white
+  }
+  .slick-tex-tag1{
+    background: #1da1f1;
+    display: inline-block;
+    padding: 15px 20px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .slick-tex-tag1::after{
+    content: "";
+    width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: #1da1f1 transparent transparent transparent;
+  border-width: 17.32px 10px 0px 10px;
+  position: absolute;
+  bottom: -10px;
+  left: 10%;
+  }
+  
+  .slick-tex-tag2{
+    font-size: 20px;
+    text-shadow: 3px 2px 3px rgba(0,0,0,0.8);
+  }
+  .slick-tex h2{
+    font-size: 32px;
+    text-shadow: 3px 2px 3px rgba(0,0,0,0.8);
+  }
+  
+  .slick-img img{
+    width: 150px;
+    transform: rotate(-20deg);
+  }
+  
+  /*front-business*/
+.fb-box{
+  flex-direction: column;
+}
+.fb-box li{
+  width: 100%;
+}
+.fb-left{
+  margin-bottom: 50px;
+}
+/*front-conpany*/
+.front-company{
+  padding-bottom: 80px;
+  position: relative;
+}
+.front-company .section-titlebox p::before{
+  background: #333333;
+}
+.blue1{
+  height: 310px;
+  top: -50px;
+  left: 0;
+}
+.btn-box2{
+  text-align: center;
+}
+/*footer*/
+footer{
+  padding: 30px 0;
+}
+.logo{
+  margin-bottom: 30px;
+}
+.f-box{
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+.f-nav ul{
+flex-direction: column;
+align-items: flex-start;
+}
+.f-nav ul li{
+margin-left: 0px;
+margin-bottom: 20px;
+}
+
+/*下層ページ*/
+/*事業内容*/
+
+.power-title{
+  font-size: 28px;
+}
+.bi-title{
+  font-size: 20px;
+}
+.goods-list{
+  grid-template-columns: repeat(2,1fr);
+}
+
+}
+
+@media (max-width:600px){
+  .btn{
+    width: 100%;
+  }
+  h1{
+    line-height: 1;
+    font-size: 28px;
+  }
+
+  .front-mainvisual{
+    margin-bottom: 0px;
+  }
+.slick-tex h2{
+  font-size: 28px
+}
+.slick-img{
+  position: static;
+  right: 0;
+  bottom: 0;
+  padding: 30px;
+  background: #fff;
+  border-radius: 30px 0 0 0 ;
+}
+/*front-contact*/
+.front-contact{
+  padding: 150px 0 50px;
+  background-position: 50% 80%;
+}
+.contact-tex{
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+
+/*下層ページ*/
+.blue2{
+  width: 80%;
+  height: 380px;
+}
+/*事業内容*/
+/*business*/
+.business-item1{
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+.business-item2{
+  flex-direction: column-reverse;
+  margin-bottom: 40px;
+}
+.business-item li{
+  width: 100%;
+
+}
+.business-de-tax {
+width: 100%;
+margin-bottom: 5px;
+}
+.business-item img{
+  height: 250px;
+}
+
+.introduce-img2{
+  grid-template-columns: 1fr;
+}
+.introduce-img2 img{
+  height: 200px;
+}
+.goods-list{
+  grid-template-columns: 1fr;
+}
+.goods-listimg img{
+  width: 50%;
+}
+
+/*会社概要*/
+
+.company-detail dt{
+  width: 100%;
+  margin-bottom: 0px;
+  border-bottom: none;
+}
+.company-detail dd{
+  width: 100%;
+}
+.submit-btn input {
+  width: 100%;
+}
+
+}
